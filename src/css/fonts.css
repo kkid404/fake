@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Kameron-Regular';
+    src: url('./fonts/Kameron-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kameron-Bold';
+    src: url('../fonts/Kameron-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}

@@ -1,0 +1,46 @@
+.heading__fonts{
+    font-family: 'Kameron-Bold', 'serif';
+    letter-spacing: 0.05em;
+}
+
+.text__fonts{
+    font-family: 'Kameron-Regular', 'serif';
+    letter-spacing: 0.05em;
+    line-height: 150%;
+}
+
+.header{
+    background: #090a0c;
+    color: #F1F2F2;
+    display: flex;
+    min-height: 150px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.heading__text{
+    font-size: 2.5vw;
+}
+
+.descript__text{
+    font-size: 1.3vw;
+}
+
+.header__btns{
+    display: flex;
+}
+
+.header__btn{
+    border: solid white 1px;
+    background: #F1F2F2;
+    text-decoration: none;
+    color: #090a0c;
+    padding: 1vh 2vw;
+    margin: 0 20px;
+    transition: 0.5s;
+}
+
+.header__btn:hover{
+    background: #090a0c;
+    color: #F1F2F2;
+}
