@@ -55,11 +55,13 @@
                     IP addresses in a database.
                 </p>
             </div>
+            <div class="main__headind__principles">
+                <h2 class="headind__principles">The Principles</h2>
+            </div>
             <div class="container__principles">
-                <h2 class="principles__heading"></h2>
                 <div class="principles__block">
+                    <img src="./src/img/100.png" class="principles__img"  alt="anonimus">
                     <h3 class="principles__heading heading__fonts">Anonymity</h3>
-                    <img src="./src/img/100.png" alt="anonimus">
                     <p class="principles__text text__fonts">
                         The main principle of Fake is anonymity. 
                         You can put your picture, but you should 
@@ -67,8 +69,8 @@
                     </p>
                 </div>
                 <div class="principles__block">
+                    <img src="./src/img/100.png" class="principles__img" alt="liberty">
                     <h3 class="principles__heading heading__fonts">Liberty</h3>
-                    <img src="./src/img/100.png" alt="liberty">
                     <p class="principles__text text__fonts">
                         We are for freedom of thought. 
                         You can be a Nazi, an alien, 
@@ -76,8 +78,8 @@
                     </p>
                 </div>
                 <div class="principles__block">
+                    <img src="./src/img/100.png" class="principles__img"  alt="anonimus">
                     <h3 class="principles__heading heading__fonts">Anonymity</h3>
-                    <img src="./src/img/100.png" alt="anonimus">
                     <p class="principles__text text__fonts">
                     We love everyone equally. 
                     Fake is a living  organism created by its users.  
