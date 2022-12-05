@@ -7,7 +7,7 @@ require_once "config.php";
 
 echo $username;
 
-$db = new ConnectSql($_ENV["server"], $_ENV["server"], $_ENV["password"], $_ENV["data"]);
+// $db = new ConnectSql($_ENV["server"], $_ENV["server"], $_ENV["password"], $_ENV["data"]);
 
 
 // try{
@@ -119,25 +119,26 @@ $db = new ConnectSql($_ENV["server"], $_ENV["server"], $_ENV["password"], $_ENV[
             <div class="modals__overlay">
                 <div class="modal modal__log" data-target="log">
                     <h3 class="modal__header heading__fonts">Log in</h3>
-                    <form action="./header.php" method="post" class="log__form">
-                        <label for="email"> email:
-                            <input type="email" id="email" 
-                            class="email input__form" name="email">
+                    <form action="./auth.php" method="post" class="log__form">
+                        <label for="email_auth"> email:
+                            <input type="email" id="email_auth" 
+                            class="email_auth input__form" name="email">
                         </label>
-                        <label for="password"> password:
-                            <input type="password" id="password" 
+                        <label for="auth_password"> password:
+                            <input type="password" id="auth_password" 
                             class="password input__form" name="password">
                         </label>
+                        <div class="btns__log">
+                            <button class="btn__style btn__log" type="submit">Log In</button>
+                            <button class="btn__style btn__log btn__close">Cancel</button>
+                        </div>
                     </form>
-                    <div class="btns__log">
-                        <button class="btn__style btn__log" type="submit">Log In</button>
-                        <button class="btn__style btn__log btn__close">Cancel</button>
-                    </div>
+
 
                 </div>
                 <div class="modal modal__sign" data-target="sign">
                 <h3 class="modal__header heading__fonts">Create account</h3>
-                    <form action="./header.php" method="post" class="log__form">
+                    <form action="./register.php" method="post" class="log__form">
                         <label for="name"> name:
                             <input type="name" id="name" 
                             class="name input__form" name="name">
@@ -150,15 +151,15 @@ $db = new ConnectSql($_ENV["server"], $_ENV["server"], $_ENV["password"], $_ENV[
                             <input type="password" id="password" 
                             class="password input__form" name="password">
                         </label>
-                        <label for="password"> confirm password:
-                            <input type="password" id="password" 
-                            class="password input__form" name="password">
+                        <label for="confirm_password"> confirm password:
+                            <input type="password" id="confirm_password" 
+                            class="password input__form" name="password_confirm">
                         </label>
+                        <div class="btns__log">
+                            <button class="btn__style btn__log" type="submit">Create</button>
+                            <button class="btn__style btn__log btn__close">Cancel</button>
+                        </div>
                     </form>
-                    <div class="btns__log">
-                        <button class="btn__style btn__log" type="submit">Create</button>
-                        <button class="btn__style btn__log btn__close">Cancel</button>
-                    </div>
                 </div>
             </div>
         </div>

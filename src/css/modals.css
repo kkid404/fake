@@ -66,9 +66,9 @@
 
 .btns__log{
     display: flex;
+	justify-content: space-between;
 }
 
 .btn__log{
-	margin: 0 47px;
 	border: black solid 1px;
 }
