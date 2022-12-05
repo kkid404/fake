@@ -30,17 +30,20 @@
     display: flex;
 }
 
-.header__btn{
-    border: solid white 1px;
+.btn__style {
+    border: solid #F1F2F2 1px;
     background: #F1F2F2;
-    text-decoration: none;
     color: #090a0c;
-    padding: 1vh 2vw;
-    margin: 0 20px;
     transition: 0.5s;
+    cursor: pointer;
 }
 
-.header__btn:hover{
+.header__btn{
+    padding: 1vh 2vw;
+    margin: 0 20px;
+}
+
+.btn__style:hover{
     background: #090a0c;
     color: #F1F2F2;
 }
