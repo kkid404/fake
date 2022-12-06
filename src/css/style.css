@@ -91,3 +91,24 @@
     margin-left: 20%;
     margin-right: 10%;
 }
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.successfull{
+    display: flex;
+    justify-content: center;
+    border: black solid 1px;
+    width: 600px;
+    height: 100px;
+    background-color: rgba(34, 140, 34, 0.7);
+    align-items: center;
+    border-radius: 3%;
+}
+
+.good{
+    font-size: 4vw;
+    color: #090a0c;
+}

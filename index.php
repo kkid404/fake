@@ -6,47 +6,24 @@ use Exception;
 require_once "config.php";
 
 echo $username;
-
-// $db = new ConnectSql($_ENV["server"], $_ENV["server"], $_ENV["password"], $_ENV["data"]);
-
-
-// try{
-//     $db->addUser("name", "email", "pass");
-// } catch(Exception $e) {
-//     echo $e;
-// }
+$db = new ConnectSql($_ENV["server"], $_ENV["username"], $_ENV["password"], $_ENV["data"]);
 
 
+if (isset($_REQUEST['register'])) {
+    $format = new Formatter();
+    if(!empty($_POST)) {
+        try{
+            $resData = $format->chekRegister($_POST);
+            $db->addUser($resData["name"], $resData["email"], $resData["password"]);
+        } catch(Exception $e) {
+            echo $e;
+        }   
+}
+}
+
+require_once "./templates/header.php";
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
-    <link rel="stylesheet" href="./src/css/fonts.css">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/null.css">
-    <link rel="stylesheet" href="./src/css/modals.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo__text">
-            <h1 class="heading__text heading__fonts">Anti Social Network</h1>
-            <p class="descript__text text__fonts">uncensored, unrestricted</p>
-        </div>
-        <div class="header__btns">
-            <button href="#" class="header__btn btn__style text__fonts" data-path="sign">
-                Sign up
-            </button>
-            <button href="#" class="header__btn btn__style text__fonts" data-path="log">
-                Log in
-            </button>
-        </div>
-    </header>
     <main class="main">
         <div class="main__text">
             <div class="container__paragraph">
@@ -106,7 +83,7 @@ echo $username;
                 </div>
                 <div class="principles__block">
                     <img src="./src/img/100.png" class="principles__img"  alt="anonimus">
-                    <h3 class="principles__heading heading__fonts">Anonymity</h3>
+                    <h3 class="principles__heading heading__fonts">Love</h3>
                     <p class="principles__text text__fonts">
                     We love everyone equally. 
                     Fake is a living  organism created by its users.  
@@ -115,54 +92,7 @@ echo $username;
                 </div>
             </div>
         </div>
-        <div class="modals">
-            <div class="modals__overlay">
-                <div class="modal modal__log" data-target="log">
-                    <h3 class="modal__header heading__fonts">Log in</h3>
-                    <form action="./auth.php" method="post" class="log__form">
-                        <label for="email_auth"> email:
-                            <input type="email" id="email_auth" 
-                            class="email_auth input__form" name="email">
-                        </label>
-                        <label for="auth_password"> password:
-                            <input type="password" id="auth_password" 
-                            class="password input__form" name="password">
-                        </label>
-                        <div class="btns__log">
-                            <button class="btn__style btn__log" type="submit">Log In</button>
-                            <button class="btn__style btn__log btn__close">Cancel</button>
-                        </div>
-                    </form>
-
-
-                </div>
-                <div class="modal modal__sign" data-target="sign">
-                <h3 class="modal__header heading__fonts">Create account</h3>
-                    <form action="./register.php" method="post" class="log__form">
-                        <label for="name"> name:
-                            <input type="name" id="name" 
-                            class="name input__form" name="name">
-                        </label>
-                        <label for="email"> email:
-                            <input type="email" id="email" 
-                            class="email input__form" name="email">
-                        </label>
-                        <label for="password"> password:
-                            <input type="password" id="password" 
-                            class="password input__form" name="password">
-                        </label>
-                        <label for="confirm_password"> confirm password:
-                            <input type="password" id="confirm_password" 
-                            class="password input__form" name="password_confirm">
-                        </label>
-                        <div class="btns__log">
-                            <button class="btn__style btn__log" type="submit">Create</button>
-                            <button class="btn__style btn__log btn__close">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        
     </main>
     <script src="./src/js/modal.js"></script>
 </body>

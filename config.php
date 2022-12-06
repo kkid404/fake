@@ -13,6 +13,7 @@
  */
 
 require_once "vendor/autoload.php";
+require_once "./templates/modal.php";
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load(); 
