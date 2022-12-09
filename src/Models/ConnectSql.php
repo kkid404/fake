@@ -46,4 +46,39 @@ class ConnectSql
         }
         $conn->close;
     }
+
+    public function getUser($email, $password)
+    {
+        $conn = $this->getDb();
+        $email = mysqli_real_escape_string($conn, md5($email));
+        $password = mysqli_real_escape_string($conn, md5($password));
+
+        $cur = "SELECT * FROM user 
+                WHERE `email` = '$email' AND `password` = '$password'";
+        $res = $conn->query($cur);
+        $res = mysqli_fetch_array($res, MYSQLI_ASSOC);
+        $conn->close;
+        if ($res) {
+            return $res;
+        } else{
+            return false;
+        }
+    }
+
+    public function getUserId($id)
+    {
+        $conn = $this->getDb();
+        $id = mysqli_real_escape_string($conn, $id);
+
+        $cur = "SELECT * FROM user 
+                WHERE `id` = '$id'";
+        $res = $conn->query($cur);
+        $res = mysqli_fetch_array($res, MYSQLI_ASSOC);
+        $conn->close;
+        if ($res) {
+            return $res;
+        } else{
+            return false;
+        }
+    }
 }
